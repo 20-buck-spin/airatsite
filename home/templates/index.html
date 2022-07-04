@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block css %}
+    {%  load static %}
+    <link rel="stylesheet" href="{% static '/css/index_styles.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="index-main main">
+        <main>
+            <div class="main-banner-container" id="main-banner-container">
+                <h1 id="main_banner_header"> Живем Ради Справедливости!</h1>
+                <a href="http://google.com"> Получить конусльтацию </a>
+            </div>
+
+            <article id="index-main-article">
+                <div class="index-services">
+                <div class="index-services-header">
+                    <h2> Наши Услуги </h2>
+                    <a href="services"> <span> Подробнее </span></a>
+                </div>
+                <div class="services-cards-container">
+                    <div class="service-card">
+                        <img class="service-card-icon" src="{% static '/icons/law_hammer.png' %}"> </img>
+                        <div class="service-card-text">
+                            <h4> Обращение в правоохранительные органы</h4>
+                            <p> Поможем вам обращаться в разные правоохранительные и судебные органы,
+                                органы прокуратуры и прочее для решений, трудных для вас, ситуаций.
+                            </p>
+                            <a href="services"> Узнать больше </a>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img class="service-card-icon" src="{% static '/icons/guard.png' %}"> </img>
+                        <div class="service-card-text">
+                            <h4> Юридическая защита </h4>
+                            <p> Наша команда опытных экспертов поможет вам собирать все необходимые документы, 
+                                и составить лучший план действий.
+                            </p>
+                            <a href="services"> Узнать больше </a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </article>
+            <div class="index-contact-form-outer-container">
+                <div class="index-contact-form-container">
+                    <a id="#contact-form" > <h2> Получить Конусльтацию </h2> </a>
+                    <p> Пожалуйста заполните анкету и наши специалисты вам перезвонят. 
+                        Просим коротко описать суть вашего обращения для лучшего обслуживания. 
+                    </p>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="contact-form-field">
+                            {{contact_form.name}}
+                        </div>
+                        <div class="contact-form-field">
+                            {{contact_form.email}}
+                        </div>  
+                        <div class="contact-form-field">
+                            {{contact_form.phone_no}}
+                        </div>
+                        <div class="contact-form-field">
+                            {{contact_form.description}}
+                        </div>
+                        <input id='input-form-sub-btn' type="submit" value="Отправить">
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock %}

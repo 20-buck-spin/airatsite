@@ -1,0 +1,197 @@
+
+/* --------------Mobile--------------- */
+
+/* --------------Main Banner--------------- */
+
+
+.main-banner-container{
+    position: relative; /* needed for the before card */
+    margin-block: 0.75rem;
+    height: max(15rem, 19vw);
+    background-image: url('../images/main_banner.jpg');
+    background-size:     cover;                
+    background-repeat:   no-repeat;
+    background-position: center center;            
+    color: var(--header-text-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: max(1rem, 3vw);
+    padding-bottom: max(3rem, 6vw);
+
+    isolation: isolate;
+}
+
+.main-banner-container::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(250,250,250,.9), rgba(250,250,250,.4));;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.main-banner-container h1{
+    text-align: center;
+    font-size: calc(1.5rem + 1.5vw);
+}
+
+.main-banner-container a, .main-banner-container a:hover,
+.main-banner-container a:focus, .main-banner-container a:active {
+    font-weight: 525;
+    font-size: calc(0.6rem + 1.2vw);
+    text-decoration: none;
+
+    background-color: navy;
+    color: white;
+    outline: 1px solid white;
+    border-radius: 2rem;
+    padding-block: 0.4rem 0.75rem;
+    padding-inline: 1.5rem;
+  }
+/* --------------Main Banner END--------------- */
+
+/* --------------Article--------------- */
+#index-main-article{
+    margin-block: calc(1rem + 1vw);
+}
+
+.index-services{
+    background-color: var(--section-bg-color-1);
+    padding-inline: 0.5rem; 
+    padding-block: 0.5rem;
+    border-radius: 0.75rem
+}
+
+.index-services-header{
+    display: flex;
+    justify-content: space-between;
+
+    padding-block: 1rem 0rem;
+    padding-inline: 0.75rem;
+}
+
+.index-services-header a {
+    text-decoration: none;
+}
+
+.services-cards-container{
+    margin-block: calc(1rem + 1vw); 
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(280px, 1fr) );
+    gap: calc(1rem + 1.5vw);
+
+}
+
+.service-card{
+    padding-block: 1rem;
+    display: flex;
+    background-color: var(--section-bg-color-2);
+    border-radius: 0.75rem;
+}
+
+.service-card-text{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+    padding-inline: 1rem;
+}
+
+
+.service-card-text a{
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: rgba(250,250,250,.8);
+    border-radius: 0.75rem;
+    width: max-content;
+    margin-top: auto;
+
+    align-self:center;
+    border: 1px solid white;
+}
+.service-card-text h4{
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+
+}
+
+.service-card-text p{
+    text-align: justify;
+}
+
+.service-card-icon{
+    display:none
+}
+/* --------------Article END--------------- */
+
+
+/* --------------Contact form --------------- */
+.index-contact-form-container{  
+    padding-inline: 1rem;
+    background-color: var(--section-bg-color-1);
+    margin-block: calc(1rem + 1vw);
+    border-radius: 0.75rem;
+}
+
+.index-contact-form-container a h2{
+    padding-block: 1rem;    
+}
+
+.index-contact-form-container p{
+    text-align: justify;
+}
+
+.index-contact-form-container form{
+    padding-block: 1rem;
+    display:flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-form-field > * {
+    width:100%;
+    border-radius: 1em;
+    padding: 0.75em;
+}
+
+#input-form-sub-btn{
+    color: white;
+    background: navy;
+    padding-inline: 1rem;
+    padding-block: 0.75rem;
+    border-radius: 1em;
+
+    font-size: 1.15em;
+}
+/* --------------Contact form END--------------- */
+
+/* --------------Mobile END--------------- */
+
+
+
+/* --------------Desktop--------------- */
+@media screen and (min-width: 480px) {
+    main > *{
+        padding-inline: calc(5vw) !important;
+    }
+
+    .service-card-icon{
+        display: block;
+        width: 4rem;
+        height: 4rem
+    }
+
+    #main-banner-container{
+        margin: 0
+    }
+
+    .services-cards-container{
+        grid-template-columns: repeat( auto-fit, minmax(465px, 1fr) );
+        gap: calc(1rem + 1.5vw);
+        font-size: min(1.5em, 17px);
+    }
+
+}
