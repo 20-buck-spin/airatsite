@@ -1,0 +1,45 @@
+/* --------------Contact form --------------- */
+.index-contact-form-container{  
+    padding-inline: 1rem;
+    background-color: var(--section-bg-color-1);
+    margin-block: calc(1rem + 1vw);
+    border-radius: 0.75rem;
+}
+
+.index-contact-form-container a h2{
+    padding-block: 1rem;    
+}
+
+.index-contact-form-container p{
+    text-align: justify;
+}
+
+.index-contact-form-container form{
+    padding-block: 1rem;
+    display:flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.contact-form-field > * {
+    width:100%;
+    border-radius: 1em;
+    padding: 0.75em;
+}
+
+#input-form-sub-btn{
+    color: white;
+    background: navy;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    border-radius: 1em;
+    font-size: calc(1.15em + .75vw);
+    transition: all 0.35s ease
+}
+
+#input-form-sub-btn:hover{
+    color: navy;
+    background: white;
+    cursor: pointer;
+}
+/* --------------Contact form END--------------- */

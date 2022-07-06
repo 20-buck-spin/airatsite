@@ -4,6 +4,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
   /* outline:  1px solid  red */
 }
 
@@ -39,6 +40,7 @@ a, p, span {
 a{
   color: inherit;
   text-decoration: none;
+  transition: all .35s ease
 }
 
 /* For very small screens */
@@ -147,8 +149,10 @@ header{
 
 .nav-bar-link {
   padding-block-end: 0.25rem;
-  border-bottom: 3px solid white;
+}
 
+.active-nabvar-link{
+  border-bottom: 3px solid white;
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .menu-items {
@@ -192,7 +196,7 @@ footer .copyright{
 @media screen and (min-width: 480px) {
   header{
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     min-height: 5rem;
     align-items: center;
     padding-inline: 3rem;
@@ -216,13 +220,26 @@ footer .copyright{
     padding: 0;
     background-color:  var(--header-bg-color); 
     flex-direction: row; 
-    gap: calc(1rem + 1vw);
+    gap: calc(0.5rem + 1vw);
     transition: all 0.6s linear;
     width: max-content;
     height: 3rem;
     align-items: center;
     transition: none;
     font-size: calc(0.5rem + 1.3vw);
+  }
+
+  .nav-bar-link {
+    padding: .5rem;
+  }
+
+  .nav-bar-link:hover{
+    color: rgb(124, 124, 124);
+    border-radius: .5rem;
+  }
+
+  .active-nabvar-link{
+    border-color: var(--nav-bar-mob-bg);
   }
 
   footer{
