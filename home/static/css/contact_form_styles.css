@@ -42,4 +42,9 @@
     background: white;
     cursor: pointer;
 }
+
+.field-error{
+    color: red;
+    display:none;
+}
 /* --------------Contact form END--------------- */

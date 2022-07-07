@@ -8,19 +8,19 @@
             {% csrf_token %}
             <div class="contact-form-field">
                 {{contact_form.name}}
-                <p class="error"></p>
+                <p class="field-error"></p>
             </div>
             <div class="contact-form-field">
                 {{contact_form.email}}
-                <p class="error"></p>
+                <p class="field-error"></p>
             </div>  
             <div class="contact-form-field">
                 {{contact_form.phone_no}}
-                <p class="error"></p>
+                <p class="field-error"></p>
             </div>
             <div class="contact-form-field">
                 {{contact_form.description}}
-                <p class="error"></p>
+                <p class="field-error"></p>
             </div>
             <input id='input-form-sub-btn' type="button" value="Отправить"
             onclick="contact(this.form)">
