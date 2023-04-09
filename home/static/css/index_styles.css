@@ -7,7 +7,7 @@
 .main-banner-container{
     position: relative; /* needed for the before card */
     margin-block: 0.75rem;
-    height: max(15rem, 25vw);
+    height: max(12rem, 27vw);
     background-image: url('../images/main_banner.jpg');
     background-size:     cover;                
     background-repeat:   no-repeat;
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: max(1rem, 3vw);
+    padding: max(1rem, 5vw);
     padding-bottom: max(3rem, 6vw);
 
     isolation: isolate;
@@ -33,9 +33,9 @@
     z-index: -1;
 }
 
-.main-banner-container h1{
+.main-banner-container h4{
     text-align: center;
-    font-size: calc(1.5rem + 1.5vw);
+    font-size: calc(.5rem + 1.5vw);
 }
 
 .main-banner-container a{
@@ -44,17 +44,16 @@
 
     background-color: navy;
     color: white;
-    outline: 1px solid white;
     outline-offset: -4px;
-    border-radius: 2rem;
+    border-radius: 0.75rem;
     padding-block: 0.4rem 0.75rem;
     padding-inline: 1.5rem;
   }
 
   .main-banner-container a:hover{
-    outline: 1px solid navy;
     background-color: white;
     color: navy;
+    border: 2px solid navy;
   }
 /* --------------Main Banner END--------------- */
 
@@ -97,6 +96,7 @@
     display: flex;
     background-color: var(--section-bg-color-2);
     border-radius: 0.75rem;
+    max-width: 95vw;
 }
 
 .service-card-text{

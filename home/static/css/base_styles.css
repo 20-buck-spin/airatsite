@@ -26,14 +26,14 @@ body{
 }
 
 h1, h2, h3, h4  {
-  font-family: "Noto Sans", "Helvetica";
+  font-family: "Montserrat", "Helvetica";
   letter-spacing: max(2px, 0.15vw);
   color: var(--header-text-color);
 }
 
 a, p, span {
   color: var(--section-text-color);
-  font-family: 'Noto Sans';
+  font-family: 'Montserrat';
   letter-spacing: max(1px, 0.05vw)
 }
 
@@ -63,7 +63,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4rem;
+  height: 3rem;
   padding-inline: 1rem;
   color: var(--header-text-color)
 }
@@ -197,7 +197,7 @@ footer .copyright{
   header{
     display: flex;
     gap: 1rem;
-    min-height: 5rem;
+    min-height: 3rem;
     align-items: center;
     padding-inline: 3rem;
   }

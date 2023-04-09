@@ -32,12 +32,13 @@
     background: navy;
     padding-inline: 1rem;
     padding-block: 0.5rem;
-    border-radius: 1em;
+    border-radius: 0.75rem;
     font-size: calc(1.15em + .75vw);
     transition: all 0.35s ease
 }
 
 #input-form-sub-btn:hover{
+
     color: navy;
     background: white;
     cursor: pointer;
