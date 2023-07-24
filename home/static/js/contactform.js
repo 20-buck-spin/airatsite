@@ -30,8 +30,18 @@ function contact(form){
 
     if (nameReTest && emailReTest && phoneReTest && descriptionReTest){
         console.log('Test passed')
+
         let resp = sendContactReq(formData, csrfToken)
-        console.log(resp)
+            .then(response => {
+            clearContactForm()
+
+            if (response.status == 'Success') {
+                location.href = '/orders/order_confirmation'
+            }
+
+            })
+
+
     } else {
         if (!nameReTest){
             let errMsg = 'Только Русские и Латинские букви доступны'
@@ -53,21 +63,39 @@ function contact(form){
 }
 
 async function sendContactReq(formData, csrf){
-    let resp = ''
-    const contactReqHeaders = {'X-CSRFToken': csrf}
-    await fetch('http://localhost:8000/contact', {
+    const contactReqHeaders = {'X-CSRFToken': csrf,
+                               'Content-Type': "application/json"
+                              }
+    let res = await fetch('http://127.0.0.1:8000/orders/create_order', {
         method: 'POST',
         headers: contactReqHeaders,
         mode: 'same-origin',
         body: JSON.stringify(formData)
-    }).then(res => resp=res.data)
-    return resp
+    })
+
+    let res_json = await res.json()
+    return res_json
 }
 
 
 function ShowContactFormFieldError(form, fieldName, errorMsg){
     let error = form.querySelector(`[name=${fieldName}]`).nextElementSibling
-            error.innerHTML = errorMsg
+            error.innerText  = errorMsg
             error.style.display = 'block'
+}
+
+function clearContactForm(){
+    console.log('clearing form')
+    let form = document.querySelector("#contact-form")
+    let inputFields = form.querySelectorAll("input, textarea")
+    Array.from(inputFields).forEach(inputField => {
+        inputField.value = ''
+    })
+
+    let errorMsges = form.querySelectorAll(".field-error")
+    Array.from(errorMsges).forEach(errorMsg => {
+        errorMsg.innerText  = ''
+        errorMsg.style.display = 'none'
+    })
 }
 

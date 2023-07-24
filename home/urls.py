@@ -4,8 +4,5 @@ from . import views
 urlpatterns = [
     # Page views
     path('', views.index, name='index'),
-
-
-    # Сontact form
-    path('contact', views.contact, name='contact'),
+    path('about', views.about_us, name='about'),
 ]

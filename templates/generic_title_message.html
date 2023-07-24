@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block css %}
+    <style>
+        .generic-message-title{
+            text-align: center;
+        }
+
+        .generic-message{
+            margin-block: 1rem;
+            text-align: center;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<main>
+    <div class="generic-message-container">
+        <h3 class="generic-message-title">{{message.title}}</h3>
+        <p class="generic-message">{{message.message}}</p>
+    </div>
+</main>
+{% endblock %}

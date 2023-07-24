@@ -1,10 +1,10 @@
 <div class="index-contact-form-outer-container">
     <div class="index-contact-form-container">
-        <a id="contact-form" > <h2> Получить Конусльтацию </h2> </a>
-        <p> Пожалуйста заполните анкету и наши специалисты вам перезвонят. 
-            Просим коротко описать суть вашего обращения для лучшего обслуживания. 
+        <a id="contact-form-header"> <h2> Составитель обращения в гос орган </h2> </a>
+        <p> Пожалуйста заполните анкету для начала составления вашего обращения.
+            Просим подробно описать суть вашего обращения для лучшего обслуживания.
         </p>
-        <form action="" method="post" name="contact-form">
+        <form action="" method="post" name="contact-form" id="contact-form">
             {% csrf_token %}
             <div class="contact-form-field">
                 {{contact_form.name}}
@@ -22,7 +22,7 @@
                 {{contact_form.description}}
                 <p class="field-error"></p>
             </div>
-            <input id='input-form-sub-btn' type="button" value="Отправить"
+            <input id='input-form-sub-btn' type="button" value="Составить обращение"
             onclick="contact(this.form)">
         </form>
     </div>

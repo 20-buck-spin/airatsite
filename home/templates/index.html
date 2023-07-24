@@ -8,44 +8,53 @@
     <div class="index-main main">
         <main>
             <div class="main-banner-container" id="main-banner-container">
-                <div class="text-wrap">
-                    <h4 id="main_banner_header"> Справедливость — наша миссия</h4>
-                    <h4> ваши права — наш приоритет </h4>
+                <div>
+                    <div class="text-wrap">
+                        <h4 id="main_banner_header"> Справедливость — наша миссия</h4>
+                        <h4> ваши права — наш приоритет </h4>
+                    </div>
+                    <a href="#contact-form-header"> Составить обращение </a>
                 </div>
-                <a href="#contact-form"> Получить конусльтацию </a>
             </div>
 
             <article id="index-main-article">
                 <div class="index-services">
-                <div class="index-services-header">
-                    <h2> Наши Услуги </h2>
-                    <a href="services">Подробнее</a>
-                </div>
-                <div class="services-cards-container">
-                    <div class="service-card">
-                        <img class="service-card-icon" src="{% static '/icons/law_hammer.png' %}"> </img>
-                        <div class="service-card-text">
-                            <h4> Обращение в правоохранительные органы</h4>
-                            <p> Поможем вам обращаться в разные правоохранительные и судебные органы,
-                                органы прокуратуры и прочее для решений, трудных для вас, ситуаций.
-                            </p>
-                            <a href="services"> Узнать больше </a>
+                    <div class="index-services-header">
+                        <h2> Наши Услуги </h2>
+    <!--                    <a href="services">Подробнее</a>-->
+                    </div>
+                    <div class="services-cards-container">
+                        <div class="service-card">
+                            <img class="service-card-icon" src="{% static '/icons/law_hammer.png' %}"> </img>
+                            <div class="service-card-text">
+                                <h4> Обращение в правоохранительные органы</h4>
+                                <p> Поможем вам обращаться в разные правоохранительные и судебные органы,
+                                    органы прокуратуры и прочее для решений, трудных для вас, ситуаций.
+                                </p>
+    <!--                            <a href="services"> Узнать больше </a>-->
+                            </div>
+                        </div>
+                        <div class="service-card">
+                            <img class="service-card-icon" src="{% static '/icons/guard.png' %}"> </img>
+                            <div class="service-card-text">
+                                <h4> Юридическая защита </h4>
+                                <p> Мы поможем вам собирать все необходимые документы,
+                                    и составить лучший план действий.
+                                </p>
+    <!--                            <a href="services"> Узнать больше </a>-->
+                            </div>
                         </div>
                     </div>
-                    <div class="service-card">
-                        <img class="service-card-icon" src="{% static '/icons/guard.png' %}"> </img>
-                        <div class="service-card-text">
-                            <h4> Юридическая защита </h4>
-                            <p> Наша команда опытных экспертов поможет вам собирать все необходимые документы, 
-                                и составить лучший план действий.
-                            </p>
-                            <a href="services"> Узнать больше </a>
-                        </div>
-                    </div>
-                </div>
                 </div>
             </article>
-            {% include 'components/contactform.html' %}
+
+            <div class="contact-form-section">
+                {% include 'components/contactform.html' %}
+                <div class="contact-form-companion-container">
+                    <img class="contact-form-companion" src="{% static 'images/index_contacts_side.jpg' %}">
+                </div>
+            </div>
+
         </main>
     </div>
 {% endblock %}

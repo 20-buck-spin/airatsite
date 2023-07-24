@@ -1,8 +1,15 @@
 /* --------------Contact form --------------- */
+
+.index-contact-form-outer-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--section-bg-color-1);
+}
+
 .index-contact-form-container{  
     padding-inline: 1rem;
-    background-color: var(--section-bg-color-1);
-    margin-block: calc(1rem + 1vw);
     border-radius: 0.75rem;
 }
 
@@ -23,25 +30,23 @@
 
 .contact-form-field > * {
     width:100%;
-    border-radius: 1em;
-    padding: 0.75em;
+    padding: 1em;
 }
 
 #input-form-sub-btn{
     color: white;
-    background: navy;
+    background: var(--accent-color-1);
     padding-inline: 1rem;
     padding-block: 0.5rem;
-    border-radius: 0.75rem;
-    font-size: calc(1.15em + .75vw);
+    font-size: 1.75rem;
     transition: all 0.35s ease
 }
 
 #input-form-sub-btn:hover{
-
-    color: navy;
+    color: var(--accent-color-1);
     background: white;
     cursor: pointer;
+    border: 1px solid var(--accent-color-1);
 }
 
 .field-error{
