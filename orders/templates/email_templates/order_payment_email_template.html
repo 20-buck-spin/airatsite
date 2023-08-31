@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <style>
+    a{{
+        text-decoration: none;
+        color: black
+    }}
+  </style>
+
+  </head>
+  <body style="margin:0;padding:0;">
+
+    <table style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background:#ffffff;">
+
+        <!-- Header And banner -->
+        <tr>
+            <table align ="center" style="border-collapse: separate; border-spacing: 20px 0;">
+                <tr>
+                    <td><h1 class="logo">Логотип</h1></td>
+                    <td><a class="nav-bar-link {% if navbar_location == 'index' %} active-nabvar-link {% endif %}"
+                        href="{% url 'index' %}">Главная</a></td>
+                    <td><a class="nav-bar-link {% if navbar_location == 'about' %} active-nabvar-link {% endif %}"
+                        href="{% url 'about' %}">О Нас</a></td>
+                </tr>
+            </table>
+        </tr>
+        <!-- End Header  -->
+
+        <!-- Main Content -->
+        <tr>
+            <td style="padding-inline:1rem;" >
+            <h4 style="text-align: center;">Уважемый клиент,</h4>
+            <p style="text-align: center;"> Ваше обращение уже готово! Пройдите по ссылке и произведите оплату для получение вашего пакета доументов!</p>
+
+            <table style="border-collapse: separate; border-spacing: 20px 0; margin-inline: auto">
+                <tr>
+                    <td colspan="2" style="text-align: center; vertical-align: middle; padding-block: 25px;
+                    font-size: 1.2rem; font-weight: bold;"> Данные Заказа</td>
+                </tr>
+                <tr>
+                    <th style="text-align: left; vertical-align: middle;"> ID заказа: </th> <td style="text-align: right;"><span> {{order.id}}</span><td>
+                </tr>
+                <tr>
+                    <th style="text-align: left; vertical-align: middle;"> Сумма к оплате:  </th> <td style="text-align: right;"><span> {{order.amount}} ₽</span></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center; vertical-align: middle; padding-block: 25px;" colspan="2"><a href="{{payment_link}}" style="text-decoration: none;
+                    background-color: #008981; font-size: 1.5rem; padding: .15rem .5rem .25rem .5rem; color: white;">
+                    Оплатить</a>
+                    </td>
+                </tr>
+            </table>
+            </td>
+            <p style="text-align: center;">
+                После оплаты, в течение одного рабочего дня вы получите весь пакет ваших доументов и инстркции по почте. Если возникнут вопросы по поводу вашего
+                обращения то свяжитесь с нами по почте support@asdasd.com или по телефону +79123123123
+            </p>
+            <h3 style="text-align: center;"> C уважением, </h3>
+            <h5 style="text-align: center;"> Комманда asdasd</h5>
+            <h5 style="text-align: center;"> support@asdasd.com</h5>
+            <h5 style="text-align: center;"> +79123123123</h5>
+
+        </tr>
+        <!-- End Main Content  -->
+
+
+        <!-- Footer -->
+        <tr>
+
+        </tr>
+        <!-- End Footer -->
+
+    </table>
+  </body>
+</html>

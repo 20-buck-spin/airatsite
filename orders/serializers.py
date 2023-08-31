@@ -1,5 +1,5 @@
 from rest_framework.serializers import ModelSerializer
-from .models import Order, PaymentInvoice
+from .models import Order
 
 
 class OrderSerializer(ModelSerializer):

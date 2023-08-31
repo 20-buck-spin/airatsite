@@ -1,0 +1,5 @@
+- Finish integration and routing of payment systems
+- Finish webhooks and payment page redirects
+- Finish order payment page html (fix css for table for small screens)
+- Test Admin page removal of buttons based on permissions X
+- Create email template on send payment link  X

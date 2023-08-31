@@ -1,0 +1,20 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+<!--    {{ block.super }}-->
+    <div class="submit-row">
+            {% if original.order_status == "0" %}
+            <input type="submit" value="Отправить счет на оплату" name="_send_payment_link">
+            {% elif original.order_status == "2" %}
+            <input type="submit" value="пометить как в работе" name="_mark_in_progress">
+            {% elif original.order_status == "3" %}
+            <input type="submit" value="пометить как совершено" name="_mark_success">
+            {% endif %}
+
+            {% if original.order_status != "5" %}
+            <input class="deletelink" type="submit" value="отменить заказ" name="_mark_cancelled">
+            {% endif %}
+
+            <input style="margin-left: auto" type="submit" value="Cохранить" name="_save">
+    </div>
+{% endblock %}

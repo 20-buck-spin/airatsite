@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block css %}
+    <style>
+        .payment-button {
+            padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+            background-color: var(--accent-color-1);
+            background-color: var(--accent-color-1);
+            border: 1px solid var(--accent-color-1);
+        }
+
+        .payment-methods-table{
+            min-width: 100%;
+            border-collapse: collapse;
+        }
+
+        .payment-table-cell {
+            padding: .75rem;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .payment-table-row th {
+            padding: 1rem;
+        }
+
+        .payment-table-row:nth-child(even) {
+            background-color: lightgray;
+        }
+
+        .payment-methods-list-header{
+            margin-block-start: 1.5rem;
+        }
+
+        .payment-methods-list {
+            margin-block: 4rem;
+            padding: 1rem;
+            padding-block-end: 2rem;
+            border: 1px solid lightgray;
+        }
+
+        @media screen and (min-width: 768px){
+            .payment-methods-list {
+                margin-inline: auto;
+                max-width: 50vw;
+            }
+        }
+
+        .payment-info-container > *, .payment-methods-list-header > *{
+            text-align: center;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .payment-info-container{
+                margin-block-start: 4rem;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+<main>
+<div class="payment-info-container">
+    <h3> Обращение ID: {{ order.id }}</h3>
+    <br>
+    <h3> Сумма: {{ order.amount }} руб.</h3>
+</div>
+
+{% if not payment_methods %}
+    <p>
+        Для продолжения вашего запроса, пожалуйста переведите {{order.amount}} руб. на счет указан ниже.
+        После вашей оплаты, В течение 2-х рабочих дней вы получите ответ на вашу почту по вашему обращению
+    </p>
+
+    <p>
+        <strong>Важно!</strong> При переводу обязательно укажите в комментариях следуюшее: <br>
+        Оплата по заказу: {{ order.id }}
+    </p>
+    <table>
+        <tr><th colspan="2">Реквизиты для оплаты</th></tr>
+        <tr><th>Номер Счета</th><td>123123123123</td></tr>
+        <tr><th>Название Банка</th><td>фывфывфыв</td></tr>
+        <tr><th>Данные Получателя</th><td>ООО фывфыв</td></tr>
+    </table>
+{% else %}
+<div class="payment-methods-list-header">
+    <h3> Платежные Методы</h3>
+    <p> Пожалуйста выберите удобнее для вас способ оплаты </p>
+</div>
+<div class="payment-methods-list">
+    <table class="payment-methods-table">
+        <tr class="payment-table-row">
+            <th> Лого </th>
+            <th> Название </th>
+            <th> Описание </th>
+            <th> Действия </th>
+        </tr>
+        {% for payment_method in payment_methods %}
+        <tr class="payment-table-row">
+            <td class="payment-table-cell"><img src="{{payment_method.logo.url}}" width="50" height="50" alt="logo" /> </td>
+            <td class="payment-table-cell"><span>{{payment_method.display_name}}</span></td>
+            <td class="payment-table-cell"><span> {{payment_method.description}}</span></td>
+            <td class="payment-table-cell"><form method="post" target="">
+                {% csrf_token %}
+                <input type="hidden" name="method_id" value="{{ payment_method.id }}">
+                <button class="payment-button"> Оплатить </button>
+            </form></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</main>
+{% endif %}
+{% endblock %}

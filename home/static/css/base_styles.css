@@ -24,6 +24,7 @@
 }
 
 body{
+  font-family: "Inter", "Helvetica";
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
@@ -35,15 +36,12 @@ body{
 }
 
 h1, h2, h3, h4  {
-  font-family: "Inter", "Helvetica";
-  letter-spacing: max(2px, 0.15vw);
   color: var(--header-text-color);
 }
 
 a, p, span {
   color: var(--accent-color-1);
   font-family: 'Inter';
-  letter-spacing: max(1px, 0.05vw)
 }
 
 a{
@@ -65,7 +63,6 @@ input, button, textarea {
 
   h1, h2, h3, h4  {
     font-family: "Inter", "Helvetica";
-    letter-spacing: max(1px, 0.15vw);
     color: var(--header-text-color);
     font-size: 0.75rem;
   }
@@ -260,7 +257,7 @@ footer .copyright{
   }
 
     main > *{
-        margin-inline: calc(5vw) !important;
+        margin-inline: calc(5vw);
     }
 
   footer{
@@ -295,7 +292,7 @@ footer .copyright{
 @media screen and (min-width: 1400px) {
 
     main > *{
-        margin-inline: 7.5vw !important;
+        margin-inline: 7.5vw;
     }
 
 }
