@@ -4,7 +4,8 @@
         <p> Пожалуйста заполните анкету для начала составления вашего обращения.
             Просим подробно описать суть вашего обращения для лучшего обслуживания.
         </p>
-        <form action="" method="post" name="contact-form" id="contact-form">
+        <form action="" method="post" name="contact-form" id="contact-form"
+            data-endpoint="{% url 'contact' %}">
             {% csrf_token %}
             <div class="contact-form-field">
                 {{contact_form.name}}

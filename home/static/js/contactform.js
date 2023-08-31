@@ -31,7 +31,9 @@ function contact(form){
     if (nameReTest && emailReTest && phoneReTest && descriptionReTest){
         console.log('Test passed')
 
-        let resp = sendContactReq(formData, csrfToken)
+        let url = form.dataset.endpoint
+
+        let resp = sendContactReq(formData, csrfToken, url)
             .then(response => {
             clearContactForm()
 
@@ -52,7 +54,7 @@ function contact(form){
             ShowContactFormFieldError(form, 'email', errMsg)
         }
         if (!phoneReTest){
-            let errMsg = 'Номер неправильно указана'
+            let errMsg = 'Номер неправильно указан'
             ShowContactFormFieldError(form, 'phone_no', errMsg)
         }
         if (!descriptionReTest){
@@ -62,11 +64,11 @@ function contact(form){
     }
 }
 
-async function sendContactReq(formData, csrf){
+async function sendContactReq(formData, csrf, url){
     const contactReqHeaders = {'X-CSRFToken': csrf,
                                'Content-Type': "application/json"
                               }
-    let res = await fetch('http://127.0.0.1:8000/orders/create_order', {
+    let res = await fetch(url, {
         method: 'POST',
         headers: contactReqHeaders,
         mode: 'same-origin',
