@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block css %}
+    <style>
+
+        #case-title {
+            margin-block-start: 2rem;
+        }
+
+        #case-date{
+            color: gray;
+            margin-block-start: 0.25rem;
+        }
+
+        #case-description{
+            margin-block: 2.5rem;
+        }
+
+        #case-files-list li{
+            margin-block: 0.5rem;
+        }
+
+        .file-url-li{
+            margin-inline-start: 1rem;
+            color: gray;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<main>
+    <h2 id="case-title"> {{case.title}} </h2>
+    <span id="case-date"> {{case.date}}</span>
+
+    <p id="case-description">
+        {{case.description|linebreaksbr}}
+    </p>
+
+    {% if case_files %}
+        <h4>Приложения к кейсу</h4>
+
+        <ul id="case-files-list">
+        {% for file in case_files %}
+             <li class="file-url-li"><a href="{{ file.file.url }}"> {{file.name}}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</main>
+{% endblock %}

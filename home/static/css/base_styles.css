@@ -170,6 +170,16 @@ header{
   transform: translateX(var(--nav-bar-width));
 }
 
+.create-order-btn{
+    font-weight: 525;
+    min-width: max-content;
+    background-color: var(--accent-color-1);
+    color: white;
+    padding-block: 0.2rem 0.35rem;
+    padding-inline: 1.5rem;
+    border: 1px solid var(--accent-color-1);
+  }
+
 
 footer{
   display: grid;

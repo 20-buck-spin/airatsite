@@ -13,6 +13,8 @@
                             href="{% url 'index' %}">Главная</a></li>
                         <li><a class="nav-bar-link {% if navbar_location == 'about' %} active-nabvar-link {% endif %}" 
                             href="{% url 'about' %}">О Нас</a></li>
+                        <li><a class="nav-bar-link {% if navbar_location == 'solved_cases' %}
+                            active-nabvar-link {% endif %}" href="{% url 'solved_cases' %}">Успешные Кейсы</a></li>
                     </ul>
             </div>
         </nav>

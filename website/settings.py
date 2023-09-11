@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'home.apps.HomeConfig',
-    'orders',
-    'payments'
+    'orders.apps.OrdersConfig',
+    'payments.apps.PaymentsConfig',
 ]
 
 MIDDLEWARE = [
@@ -112,10 +112,7 @@ LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'Europe/Moscow'
 
-USE_I18N = False
-
 USE_TZ = False
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

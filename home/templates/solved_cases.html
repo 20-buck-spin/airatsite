@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block css %}
+    <style>
+        #solved-cases-header{
+            display: flex;
+            align-items: flex-start;
+            gap: 5rem;
+        }
+
+        #solved-cases-title{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .cases-container{
+            margin-block: 1rem;
+        }
+
+        .cases-container li{
+            margin-inline-start: 1rem;
+            margin-block: 0.35rem;
+            width: max-content;
+        }
+
+        .cases-container li:hover {
+            color: darkgreen;
+            font-size: 1.1rem;
+        }
+
+        @media screen and (max-width: 480px){
+            #solved-cases-header{
+                padding-inline: 1rem;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .cases-container{
+                margin-block: 2rem;
+                padding-inline: 1rem;
+            }
+
+            .cases-container li{
+                margin-block: 0.5rem;
+            }
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<main>
+    <div id="solved-cases-header">
+        <div id="solved-cases-title">
+            <h3>Успешные Кейсы</h3>
+            <p>Ниже представлены кейсы в которых мы уже успешно помогли нашим клиентам решить свои проблемы.
+                Нажмите на тему кейса чтобы узнать больше.
+            </p>
+        </div>
+        <a class="create-order-btn" href="/home/#contact-form-header"> Составить Обращение </a>
+    </div>
+
+    <ol class="cases-container">
+        {% for case in cases %}
+            <li><a href="/solved_cases/{{case.id}}" class="case-title"> {{case.title}} </a></li>
+        {% endfor %}
+    </ol>
+</main>
+{% endblock %}
