@@ -1,21 +1,45 @@
 {% extends "base.html" %}
 {% block css %}
     <style>
-        .generic-message-title{
-            text-align: center;
+
+        .about-us-container{
+            margin-block: 2rem;
+        }
+
+        .about-us-title{
+            margin-block: 1rem;
         }
 
         .generic-message{
             margin-block: 1rem;
-            text-align: center;
         }
     </style>
 {% endblock %}
 {% block content %}
 <main>
-    <div class="generic-message-container">
-        <h3 class="generic-message-title">О нас</h3>
-        <p class="generic-message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque beatae cum enim eum facere facilis id libero magnam molestias necessitatibus nisi optio, praesentium repudiandae rerum tempora ullam vitae voluptas?</p>
+    <div class="about-us-container">
+        <h2 class="about-us-title">О нас</h2>
+        <p class="about-us-message">
+
+            Команда юристов, состоящая из пенсионеров правоохранительной
+            системы, решила создать контент для помощи людям, оказавшимся в
+            трудной правовой ситуации. Взяв на вооружение искусственный интеллект,
+            мы разработали алгоритмы, которые помогли нам в короткое время (путем
+            анализа большого пула правовой информации и опыта) составлять
+            обращения в правоохранительные органы для своевременного
+            восстановления прав обратившихся к нам граждан, а также осуществлять их
+            защиту от не справедливых обвинений. <br/> <br/>
+
+            Как это работает? После того как Вы попали в сложную ситуацию, в
+            которой Вам необходима юридическая помощь, первое - необходимо
+            правильно понять в компетенцию какого правоохранительного органа входит
+            решение Вашей проблемы; Второе – правильно составить обращение, в
+            котором поэтапно будет расписано, в чем суть Вашей проблемы и какой
+            алгоритм действий Вы видите для ее решения. Если же в отношении Вас
+            выдвигаются не законные обвинения, то мы готовы опираясь на многолетний
+            опыт постараться помочь Вам выйти из сложившейся ситуации.
+
+        </p>
     </div>
 </main>
 {% endblock %}

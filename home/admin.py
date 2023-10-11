@@ -7,6 +7,7 @@ class SolvedCaseFileInLine(admin.StackedInline):
     model = SolvedCaseFile
     extra = 1
 
+
 class SolvedCaseAdmin(admin.ModelAdmin):
     model = SolvedCase
     inlines = [SolvedCaseFileInLine]
