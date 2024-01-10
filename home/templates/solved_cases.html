@@ -1,35 +1,64 @@
 {% extends "base.html" %}
+{%  load static %}
 {% block css %}
     <style>
         #solved-cases-header{
-            display: flex;
-            align-items: flex-start;
-            gap: 5rem;
+            margin-block-start: 1.5rem;
         }
 
         #solved-cases-title{
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            margin-block: 1.5rem
+        }
+
+        #solved-cases-title p {
+            font-size: 0.9rem;
         }
 
         .cases-container{
-            margin-block: 2rem;
+            margin-block: 4rem;
+            list-style: none;
         }
 
-        .cases-container li{
-            margin-inline-start: 1rem;
-            margin-block: 0.35rem;
+
+        .cases-container a li{
             width: max-content;
-            max-width: 85vw;
+            padding-block: 2rem;
+            padding-inline: .25rem;
+            border-block-start: 1px solid black;
+            width: 85%;
+            transition: background-color 150ms linear;
         }
 
-        .cases-container li:hover {
-            color: darkgreen;
-            font-size: 1.05rem;
+        .cases-container a:last-child li{
+            border-block-end: 1px solid black;
         }
 
-        @media screen and (max-width: 480px){
+        .cases-container a li:hover {
+            color: white;
+            background-color: var(--accent-color-1);
+        }
+
+        .cases-container a li:hover .right-arrow-icon {
+            filter: brightness(0) invert(1);
+        }
+
+        .case-title-inner{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            gap: 1.5rem
+        }
+
+        .right-arrow-icon{
+            width: 58px;
+            height: 31px;
+        }
+
+        @media screen and (max-width: 580px){
             #solved-cases-header{
                 padding-inline: 1rem;
                 flex-direction: column;
@@ -41,8 +70,12 @@
                 padding-inline: 1rem;
             }
 
-            .cases-container li{
+            .cases-container a li{
                 margin-block: 0.5rem;
+            }
+
+            .right-arrow-icon {
+                display: none
             }
         }
     </style>
@@ -61,7 +94,14 @@
 
     <ol class="cases-container">
         {% for case in cases %}
-            <li><a href="/solved_cases/{{case.id}}" class="case-title"> {{case.title}} </a></li>
+            <a href="/solved_cases/{{case.id}}" >
+            <li>
+                <div class="case-title-inner" >
+                    <span class="case-title">{{case.title}}</span>
+                    <img class="right-arrow-icon" src="{% static '/icons/right-arrow.png' %}">
+                </div>
+            </li>
+            </a>
         {% endfor %}
     </ol>
 </main>

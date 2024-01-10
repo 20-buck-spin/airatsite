@@ -3,22 +3,38 @@
     <style>
 
         .about-us-container{
+            display: grid;
+            grid-template-columns: 2fr 10fr;
             margin-block: 2rem;
         }
 
         .about-us-title{
             margin-block: 1rem;
+            justify-self: center;
+            align-self: center;
         }
 
         .generic-message{
             margin-block: 1rem;
+        }
+
+        @media screen and (max-width: 580px) {
+            .about-us-container{
+                margin-inline: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .about-us-container{
+                display: block;
+            }
         }
     </style>
 {% endblock %}
 {% block content %}
 <main>
     <div class="about-us-container">
-        <h2 class="about-us-title">О нас</h2>
+        <h1 class="about-us-title">О нас</h1>
         <p class="about-us-message">
 
             Команда юристов решила создать контент для помощи людям, оказавшимся в
